@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{C609F28E-CB74-44D0-B9A9-DD9F31EC2732}|Unit Tests">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Features/FeatureBase.cs">
+    <Files>
+      <File FileName="add_a_task.feature" Line="10" Column="5" />
+      <File FileName="add_a_task.feature.cs" Line="69" Column="28" />
+      <File FileName="Features/FeatureBase.cs" Line="14" Column="48" />
+    </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="BddWithXamarinUITest" expanded="True">
+            <Node name="BddWithXamarinUITest" expanded="True">
+              <Node name="BddWithXamarinUITest" expanded="True">
+                <Node name="AddingATaskFeature" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.BddWithXamarinUITest PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
