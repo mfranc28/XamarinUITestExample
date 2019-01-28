@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\NUnit.3.11.0\build\NUnit.props" Condition="Exists('packages\NUnit.3.11.0\build\NUnit.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C609F28E-CB74-44D0-B9A9-DD9F31EC2732}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>BddWithXamarinUITest</RootNamespace>
+    <AssemblyName>BddWithXamarinUITest</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Should">
+      <HintPath>packages\Should.1.1.20\lib\Should.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="TechTalk.SpecFlow">
+      <HintPath>packages\SpecFlow.2.4.1\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.UITest">
+      <HintPath>packages\Xamarin.UITest.2.2.7\lib\net45\Xamarin.UITest.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="edit_a_task.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>edit_a_task.feature.cs</LastGenOutput>
+    </None>
+    <None Include="remove_a_task.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>remove_a_task.feature.cs</LastGenOutput>
+    </None>
+    <None Include="add_a_task.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>add_a_task.feature.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppInitializer.cs" />
+    <Compile Include="Steps\AddATaskSteps.cs" />
+    <Compile Include="Features\AddingATaskFeature.cs" />
+    <Compile Include="Screens\ScreenNames.cs" />
+    <Compile Include="Screens\Scopes.cs" />
+    <Compile Include="Screens\AddTask\IAddTaskScreen.cs" />
+    <Compile Include="Screens\Home\IHomeScreen.cs" />
+    <Compile Include="Screens\AddTask\iOSAddTaskScreen.cs" />
+    <Compile Include="Screens\Home\iOSHomeScreen.cs" />
+    <Compile Include="Screens\AddTask\AndroidAddTaskScreen.cs" />
+    <Compile Include="Screens\Home\AndroidHomeScreen.cs" />
+    <Compile Include="Steps\EditATaskSteps.cs" />
+    <Compile Include="Features\EditATaskFeature.cs" />
+    <Compile Include="TestHelpers.cs" />
+    <Compile Include="InstrumentsRunner.cs" />
+    <Compile Include="Simulator.cs" />
+    <Compile Include="Features\FeatureBase.cs" />
+    <Compile Include="Features\RemoveATaskFeature.cs" />
+    <Compile Include="Steps\CommonSteps.cs" />
+    <Compile Include="Steps\RemoveATaskSteps.cs" />
+    <Compile Include="Steps\StepsBase.cs" />
+    <Compile Include="SimulatorNames.cs" />
+    <Compile Include="edit_a_task.feature.cs">
+      <DependentUpon>edit_a_task.feature</DependentUpon>
+    </Compile>
+    <Compile Include="remove_a_task.feature.cs">
+      <DependentUpon>remove_a_task.feature</DependentUpon>
+    </Compile>
+    <Compile Include="add_a_task.feature.cs">
+      <DependentUpon>add_a_task.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Steps\" />
+    <Folder Include="Features\" />
+    <Folder Include="Screens\" />
+    <Folder Include="Screens\Home\" />
+    <Folder Include="Screens\AddTask\" />
+  </ItemGroup>
+  <Import Project="packages\SpecFlow.2.4.1\build\SpecFlow.targets" Condition="Exists('packages\SpecFlow.2.4.1\build\SpecFlow.targets')" />
+</Project>
